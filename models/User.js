@@ -2,12 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  username: String,
   email: String,
   password: String,
-  role: {
+  role: { //                                                                Correct?
     type: String,
     default: 'member1',
-    enum: ['member1', 'member2', 'member3', 'member4', 'admin']
+    enum: ['member1', 'member2', 'member3', 'member4', 'moderator']
+  },
+  administration: {
+    type: String,
+    default: 'member',
+    enum: ['member', 'admin']
   }
 });
 

@@ -2,12 +2,15 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const eventSchema = new Schema({
-  description: String,
   name: String,
   owner: {
-    type: Schema.Types.ObjectId, //??
+    type: Schema.Types.ObjectId,
     ref: 'User'
-  }
+  },
+  date: Date,
+  startTime: String,
+  endTime: String,
+  description: String
 });
 
 const Event = mongoose.model('Event', eventSchema);

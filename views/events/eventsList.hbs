@@ -1,0 +1,15 @@
+{{#if events}}
+<h1>Events List</h1>
+<ul>
+  {{#each events}}
+  <li><a href="/events/{{_id}}">{{date}} {{startTime}} {{endTime}} {{name}}</a></li>
+  {{/each}}
+</ul>
+{{else}}
+<h1>No events to display</h1>
+{{/if}}
+
+<a href="/">Calendar</a>
+{{#if user}}
+<a href="/events/new">Create a new event</a>
+{{/if}}
