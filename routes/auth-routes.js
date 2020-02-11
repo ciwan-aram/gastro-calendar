@@ -6,7 +6,7 @@ const bcryptSalt = 10;
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
 
-router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {  // why do we render this page?
   res.render("private", { user: req.user });
 });
 

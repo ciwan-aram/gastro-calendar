@@ -5,7 +5,8 @@ const userSchema = new Schema({
   username: String,
   email: String,
   password: String,
-  role: { //                                                                Correct?
+  role: {
+    //                                                                Correct?
     type: String,
     default: 'member1',
     enum: ['member1', 'member2', 'member3', 'member4', 'moderator']
