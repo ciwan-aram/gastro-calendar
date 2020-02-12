@@ -1,17 +1,29 @@
+<div class="login-container">
+    <h1 class="login-page-title">login-page</h1>
+    <div class="form-part">
+        <form action="/login" method="POST">
+            <div class="label-group">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+                </div>
+            </div>
 
-<form action="/login" method="POST">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" name="username">
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
-  </div>
-  {{#if message}}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <div>
-    <input type="submit" value="Log In">
-  </div>
-</form>
+            {{#if message}}
+            <div class="error-message">{{ message }}</div>
+            {{/if}}
+            <div>
+                <input type="submit" value="Log In">
+            </div>
+    </div>
+    </form>
+
+    <h3 class="sing-up_btn_title">
+        <div><a href="">Sign-up(work group)</a></div>
+    </h3>
+    <div class="sing-up_btn"></div>
+</div>

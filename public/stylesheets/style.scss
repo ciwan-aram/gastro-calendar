@@ -1,8 +1,178 @@
-body {
-  // padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  padding: 0;
+  margin:0;
 }
 
-a {
-  color: #00B7FF;
+//common
+
+.container {
+   position: relative; 
+   width: 100%; 
+   height: auto !important; 
+   height: 100%; 
+   min-height: 100%;
+   }
+
+html,  body { 
+   margin: 0; 
+   width: 100%; 
+   height: 100%; 
+  }
+
+footer {
+   width: 100%; 
+   height: 30px; 
+   position: absolute; 
+   bottom: 0; 
+   text-align: center;
+  }
+
+.page-name {
+    margin-left: 50px;
+    font-size: 90px;
+    letter-spacing: 1px;
+  }
+.page-description{
+    margin-left: 50px;
+    font-size: 20px;
+    letter-spacing: 1px;
 }
+
+// footer
+footer > p {
+  color: gray;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+// header
+
+.nav-list{
+  display: flex;
+  flex-flow: row no-wrap;
+  list-style: none;
+  color:white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:60px;
+}
+
+.nav-right{
+  display: flex;
+  flex-flow: row no-wrap;
+  margin:0 0 0 auto;
+  margin-right:50px;
+}
+
+.nav-list-item{
+  margin-left: 50px;
+}
+
+.nav-left{
+  margin-left: 50px;
+}
+
+header {
+  height: 60px;
+  background-color: lightblue;
+}
+
+.nav-left a{
+  text-decoration: none;
+}
+.nav-right a{
+  text-decoration: none;
+}
+
+.nav-left a:visited {
+color: white;
+}
+
+.nav-right a:visited {
+  text-decoration: none;
+  color: white;
+  }
+
+//index-page
+.top-page-name{
+  text-align: center;
+  font-size: 90px;
+  letter-spacing: 1px;
+}
+
+//log-in-page
+
+.login-page-title{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.form-part{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-container{
+  text-align: center;
+}
+
+.sign-up_btn_title{
+  margin: 20px 0 10px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sign-up_btn{
+  margin: 10px 0 30px 0;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.sign-up_btn a {
+text-decoration: none;
+}
+
+.cover-image{
+  background-image:url("../images/apple-1867752_1920.jpg");
+  height:100vh;
+  text-align:  center; 
+}
+
+.top-page-wrapper{
+  background-color: white;
+  width: 60vw;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 80px;
+  background:rgba(244, 244, 244, 0.619)
+}
+
+//sing-up-page 
+.cover-image_sign_up{
+  background-image: url("../images/cafe-3537801_1920.jpg");
+  height:100vh;
+  text-align:  center; 
+}
+
+.signup-page-wrapper {
+  background-color: white;
+  width: 60vw;
+  height: 70vh;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 80px;
+  background:rgba(244, 244, 244, 0.756)
+}
+
+.sign-page-title{
+  font-size: 80px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+
