@@ -132,4 +132,10 @@ app.use('/', events);
 const users = require('./routes/users');
 app.use('/', users);
 
+const profile = require('./routes/profile');
+app.use('/', profile);
+
+const calendar = require('./routes/calendar');
+app.use('/', calendar);
+
 module.exports = app;
