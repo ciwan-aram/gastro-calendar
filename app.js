@@ -127,4 +127,11 @@ app.use('/', index);
 const events = require('./routes/events');
 app.use('/', events);
 
+const profile = require('./routes/profile');
+app.use('/', profile);
+
+const calendar = require('./routes/calendar');
+app.use('/', calendar);
+
+
 module.exports = app;
