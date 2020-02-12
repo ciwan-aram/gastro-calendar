@@ -47,8 +47,7 @@ router.get('/events', (req, res) => {
     });
 });
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+//>>>>>>>>>>>>>>>>>>>>>>>    Event ID   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 router.get('/events/:id', (req, res, next) => {
   Event.findById(req.params.id)
     .then(event => {
@@ -57,6 +56,9 @@ router.get('/events/:id', (req, res, next) => {
       let showCreateNewEvent = false;
       let showSaveChanges = false;
 
+      console.log(req.user, 'Here req.user');
+      console.log('req session', req.session.user);
+      console.log(event.name, 'Hiiiiiiiii22222222');
       if (req.user && req.user.role === 'moderator') {
         //only related user role (or name!!??)
         showDelete = true;
@@ -64,58 +66,36 @@ router.get('/events/:id', (req, res, next) => {
         showCreateNewEvent = true;
       } else if (
         req.user &&
-        event.owner._id.toString() === req.user._id.toString()
+        event.name.toString() === req.user.username.toString()
       ) {
         showModify = true;
-      } else
-        res.render('events/eventDetails.hbs', {
-          event,
-          showDelete: showDelete,
-          showSaveChanges: showSaveChanges,
-          user: req.user
-        });
+      } else {
+        console.log('Hiiiiiii');
+        res.redirect('/events');
+      }
+      res.render('events/eventDetails.hbs', {
+        event,
+        showDelete: showDelete,
+        showSaveChanges: showSaveChanges,
+        showModify: showModify,
+        user: req.user
+      });
     })
     .catch(err => {
       next(err);
     });
 });
 
-// router.get('/rooms/:id/delete', (req, res, next) => {
-//   // if (req.user.role === "moderator") {
-//   //   Room.deleteOne({ _id: req.params.id })
-//   //     .then(() => {
-//   //       res.redirect("/rooms");
-//   //     })
-//   //     .catch(err => {
-//   //       next(err);
-//   //     });
-//   // } else {
-//   //   Room.deleteOne({ _id: req.params.id, owner: req.user._id })
-//   //     .then(() => {
-//   //       res.redirect("/rooms");
-//   //     })
-//   //     .catch(err => {
-//   //       next(err);
-//   //     });
-//   // }
-
-//   const query = {
-//     _id: req.params.id
-//   };
-
-//   if (req.user.role !== 'moderator') {
-//     query.owner = req.user._id;
-//   }
-//   // moderator: query { _id: '5e3d46e43051578b9b860b89' };
-//   // basic user:  { _id: '5e3d46e43051578b9b860b89', owner: 5e3d33168c73d081a5ea966b }
-
-//   Room.deleteOne(query)
-//     .then(() => {
-//       res.redirect('/rooms');
-//     })
-//     .catch(err => {
-//       next(err);
-//     });
-// });
+router.get('/events/:id/delete', (req, res, next) => {
+  if (req.user.role === 'moderator') {
+    Event.deleteOne({ _id: req.params.id })
+      .then(() => {
+        res.redirect('/events');
+      })
+      .catch(err => {
+        next(err);
+      });
+  }
+});
 
 module.exports = router;

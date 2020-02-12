@@ -1,0 +1,14 @@
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> --}}
+
+<h2>{{user.name}}</h2><br>
+<h3>Username: {{user.username}}</h3><br>
+<h3>Email: {{user.email}}</h3><br>
+
+{{#if showDelete}}
+<a href="/users/{{user._id}}/delete">Delete member</a>
+<h3>Role: {{user.role}}</h3>
+<h3>Administration level: {{user.administration}}</h3>
+{{/if}}
+{{#if showModify}}
+<a href="/users/{{user._id}}/modify">Edit user information</a>
+{{/if}}

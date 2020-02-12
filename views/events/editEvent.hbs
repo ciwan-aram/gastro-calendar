@@ -6,3 +6,7 @@
   <input type="text" name="description">
   <button type="submit">Create new event</button>
 </form>
+
+{{#if showSaveChanges}}
+<a href="/events/{{event._id}}/save">Save changes</a>
+{{/if}}

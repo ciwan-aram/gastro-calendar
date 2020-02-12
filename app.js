@@ -67,12 +67,14 @@ mongoose
     console.error('Error connecting to mongo', err);
   });
 
+const MongoStore = require('connect-mongo')(session);
 // express-session configuration
 app.use(
   session({
     secret: 'our-passport-local-strategy-app',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
 
@@ -126,5 +128,8 @@ app.use('/', index);
 
 const events = require('./routes/events');
 app.use('/', events);
+
+const users = require('./routes/users');
+app.use('/', users);
 
 module.exports = app;

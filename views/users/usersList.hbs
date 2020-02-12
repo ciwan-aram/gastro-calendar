@@ -1,0 +1,15 @@
+{{#if users}}
+<h1>Members List</h1>
+<ul>
+  {{#each users}}
+  <li><a href="/users/{{_id}}">{{name}} {{username}} {{email}} {{role}} {{administration}}</a></li>
+  {{/each}}
+</ul>
+{{else}}
+<h1>No Members to display</h1>
+{{/if}}
+
+{{!-- How to make below appear only for admins --}}
+{{#if users}}
+<a href="/users/add">Add a new user</a>
+{{/if}}

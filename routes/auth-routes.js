@@ -6,7 +6,7 @@ const bcryptSalt = 10;
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
 
-router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {  // why do we render this page?
+router.get("/profile", ensureLogin.ensureLoggedIn(), (req, res) => {  // why do we render this page?
   res.render("private", { user: req.user });
 });
 
@@ -58,7 +58,7 @@ router.get("/login", (req, res, next) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/profile",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
