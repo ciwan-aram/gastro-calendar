@@ -1,8 +1,8 @@
-<form action="/users" method="PATCH">
-  <input type="text" name="name" required>
-  <input type="text" name="username" required>
-  <input type="text" name="email">
-  <input type="text" name="role" required>
-  <input type="text" name="administration">
+<form action="/users/modify" method="POST">
+  <input type="text" value="{{name}}" name="name" id="name-member" required>
+  <input type="text" value="{{username}}" name="username" required>
+  <input type="text" value="{{email}}" name="email">
+  <input type="text" value="{{role}}" name="role" required>
+  <input type="text" value="{{administration}}" name="administration">
   <button type="submit">Modify Member Data</button>
 </form>

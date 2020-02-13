@@ -1,12 +1,8 @@
-<form action="/events" method="PATCH">
-  <input type="text" name="name" required>
-  <input type="date" name="date" required>
-  <input type="time" name="startTime" min="00:00" max="23:99" required>
-  <input type="time" name="endTime" min="00:00" max="23:99" required>
-  <input type="text" name="description">
-  <button type="submit">Create new event</button>
+<form action="/events/{{eventId}}/modifyevent" method="POST">
+  <input type="text" value="{{name}}" name="name" required>
+  <input type="date" value="{{date}}" name="date" required>
+  <input type="time" value="{{startTime}}" name="startTime" required>
+  <input type="time" value="{{endTime}}" name="endTime" required>
+  <input type="text" value="{{description}}" name="description">
+  <button type="submit">Modify event</button>
 </form>
-
-{{#if showSaveChanges}}
-<a href="/events/{{event._id}}/save">Save changes</a>
-{{/if}}

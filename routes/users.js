@@ -67,14 +67,23 @@ router.get('/users/:id', (req, res, next) => {
         console.log('YASSSSS');
         res.redirect('/users');
       }
-      res.render('users/userDetails.hbs', {
-        user,
-        showDelete: showDelete,
-        showSaveChanges: showSaveChanges,
-        showModify: showModify,
-        user: req.user
+
+      User.findById(req.params.id).then(user => {
+        console.log(user);
+        res.render('users/userDetails.hbs', {
+          name: user.name,
+          username: user.username,
+          email: user.email,
+          role: user.role,
+          administration: user.administration,
+          showDelete: showDelete,
+          showSaveChanges: showSaveChanges,
+          showModify: showModify,
+          userId: user._id
+        });
       });
     })
+
     .catch(err => {
       next(err);
     });
@@ -90,6 +99,45 @@ router.get('/users/:id/delete', (req, res, next) => {
         next(err);
       });
   }
+});
+
+router.get('/users/:id/modify', (req, res, next) => {
+  User.findById(req.params.id).then(user => {
+    console.log('user', user);
+    res.render('./users/editUser.hbs', {
+      name: user.name,
+      username: user.username,
+      email: user.email,
+      role: user.role,
+      administration: user.administration
+    });
+  });
+});
+
+router.post('/users/:id/modify', (req, res, next) => {
+  if (req.user.role === 'moderator') {
+    User.findOneAndUpdate({ _id: req.params.id })
+      .then(() => {
+        res.redirect('/users/usersList.hbs');
+      })
+      .catch(err => {
+        next(err);
+      });
+  }
+});
+
+router.post('/users/modify', (req, res) => {
+  const { name, username, email, role, administration } = req.body;
+  User.findOneAndUpdate(
+    {
+      _id: req.user._id
+    },
+    { name, username, email, role, administration },
+    { new: true }
+  )
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+  res.redirect('/users');
 });
 
 module.exports = router;

@@ -9,12 +9,12 @@ const userSchema = new Schema({
   role: {
     //                                                                Correct?
     type: String,
-    default: 'member1',
+    default: 'moderator',
     enum: ['member1', 'member2', 'member3', 'member4', 'moderator']
   },
   administration: {
     type: String,
-    default: 'member',
+    default: 'admin',
     enum: ['member', 'admin']
   }
 });

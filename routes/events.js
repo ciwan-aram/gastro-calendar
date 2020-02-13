@@ -98,4 +98,35 @@ router.get('/events/:id/delete', (req, res, next) => {
   }
 });
 
+router.get('/events/:id/modify', (req, res, next) => {
+  Event.findById(req.params.id).then(event => {
+    console.log('event', event);
+    res.render('./events/editEvent.hbs', {
+      eventId: event._id,
+      name: event.name,
+      date: event.date,
+      startTime: event.startTime,
+      endTime: event.endTime,
+      description: event.description
+    });
+  });
+});
+
+router.post('/events/:id/modifyevent', (req, res) => {
+  const { name, date, startTime, endTime, description } = req.body;
+  if (req.user.role === 'moderator') {
+    Event.findOneAndUpdate(
+      {
+        _id: req.params.id
+      },
+      { name, date, startTime, endTime, description },
+      { new: true }
+    )
+      .then(() => {
+        res.redirect('/events');
+      })
+      .catch(err => console.log(err));
+  }
+});
+
 module.exports = router;
