@@ -33,10 +33,11 @@ footer {
   letter-spacing: 1px; }
 
 input:focus {
-  border: solid 1px #EEA34A; }
+  border: solid 1px #eea34a; }
 
 .headline-title {
-  font-size: 35px; }
+  font-size: 45px;
+  margin-top: 20px; }
 
 footer > p {
   color: gray;
@@ -99,13 +100,18 @@ header {
 .login-container {
   text-align: center; }
 
+.log_in_btn {
+  margin: 30px 0 0 0; }
+
+.login_btn_btn {
+  padding: 5px 10px; }
+
 .sign-up_btn_title {
   margin: 20px 0 10px 0;
-  text-align: center;
-  margin: 20px 0 25px 0; }
+  text-align: center; }
 
 .sign-up_btn {
-  margin: 10px 0 30px 0;
+  margin: 35px 0 30px 0;
   background-color: white;
   width: 100px;
   text-align: center;
@@ -117,12 +123,13 @@ header {
 
 .cover-image {
   background-image: url("../images/apple-1867752_1920.jpg");
-  height: 100vh;
+  height: 95vh;
   text-align: center; }
 
 .top-page-wrapper {
   background-color: white;
   width: 60vw;
+  height: 55vh;
   border-radius: 8px;
   display: inline-block;
   margin-top: 80px;
@@ -147,6 +154,9 @@ header {
   text-align: center;
   margin-top: 0px; }
 
+.account-message {
+  margin: 20px 0 30px 0; }
+
 .event_wrapper {
   display: inline-block;
   background: rgba(255, 255, 255, 0.927);
@@ -162,7 +172,29 @@ header {
 
 .no_events {
   font-size: 20px;
-  margin-top: 30px; }
+  margin-top: 15px;
+  color: gray; }
+
+.create_evt_btn {
+  border-radius: 3px;
+  font-size: 1.2em;
+  padding: 5px 20px;
+  cursor: pointer;
+  margin: 15px 0 0 0;
+  width: 150px;
+  text-align: center;
+  background-color: white;
+  color: blank;
+  display: inline;
+  border: solid 1.5px blue; }
+
+.create_evt_btn > a {
+  text-decoration: none; }
+
+.button-add {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px; }
 
 .member_wrapper {
   display: inline-block;
@@ -170,12 +202,19 @@ header {
   height: 70vh;
   width: 65vw;
   border-radius: 8px;
-  margin-top: 80px; }
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.new_member_wrapper {
+  display: flex;
+  justify-content: center; }
 
 .member_page_background {
   background-image: url("../images/restaurant-2651423_1920.jpg");
   text-align: center;
-  height: 93vh; }
+  height: 100vh; }
 
 .user_wrapper {
   display: inline-block;
@@ -189,6 +228,21 @@ header {
   background-image: url("../images/diary-614149_1920.jpg");
   text-align: center;
   height: 93vh; }
+
+.user_add_btn {
+  border-radius: 3px;
+  font-size: 1.2em;
+  padding: 5px 20px;
+  cursor: pointer;
+  margin: 15px 0 0 0;
+  text-align: center;
+  background-color: white;
+  color: blank;
+  display: inline;
+  border: solid 1.5px blue; }
+
+.user_add_btn > a {
+  text-decoration: none; }
 
 #form-container {
   display: flex;
@@ -207,7 +261,7 @@ header {
   font-size: 1.2em;
   padding: 3px 19px;
   cursor: pointer;
-  margin: 15px 0 30px;
+  margin: 15px 0 0px;
   background-color: white;
   color: blank; }
 
@@ -218,5 +272,10 @@ header {
 .login_btn_div {
   padding: 2px 2px;
   font-weight: bold; }
+
+.profile_message {
+  font-size: 25px;
+  margin: 10px 0;
+  color: gray; }
 
 /*# sourceMappingURL=style.css.map */
