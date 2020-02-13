@@ -31,18 +31,23 @@
         <label for="tel">TEL</label>
         <input id="tel" type="text" name="tel" placeholder="Your tel">
         <br>
+        <button class="sign_up_btn">Create account</button>
+      </form>
+      {{#if message}}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br>
+
+      <p class="account-message">
+        Do you already have an account?
+        <a href="/">Login</a>
+      </p>
+      <div class="group">
         {{#if message}}
         <div class="error-message">{{ message }}</div>
         {{/if}}
-        <br>
+      </div>
 
-        <button>Create account</button>
 
-        <p class="account-message">
-          Do you already have an account?
-          <a href="/login">Login</a>
-
-        </p>
-      </form>
     </div>
   </div>

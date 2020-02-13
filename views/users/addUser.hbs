@@ -1,15 +1,39 @@
-<form action="/users" method="POST">
-  <input type="text" placeholder="Name" name="name" required>
-  <input type="text" placeholder="username" name="username" required>
-  <input type="text" placeholder="email" name="email">
-  <select id="role">
-    <option value="bar">Bar</option>
-    <option value="door">Door</option>
-    <option value="clean">Clean</option>
-    <option value="moderator">Moderator</option>
-    <option value="other">Other</option>
-  </select>
+<div class="container">
+  <header>
+    <ul class="nav-list flex">
+      <li class="nav-left">
+        <a href="/calendar" class="no-color-change">Calendar</a>
+      </li>
+      <div class="nav-right">
+        <li class="nav-list-item"><a href="/users">Group</a></li>
+        <li class="nav-list-item"><a href="/events">Event</a></li>
+        <li class="nav-list-item"><a href="/profile">Profile</a></li>
+      </div>
+    </ul>
+  </header>
 
-  <input type="text" placeholder="administration" name="administration">
-  <button type="submit">Add new member</button>
-</form>
+  <div class="member_page_background">
+    <div class="member_wrapper">
+
+      <form action="/users" method="POST">
+        <input type="text" placeholder="Name" name="name" required>
+        <input type="text" placeholder="username" name="username" required>
+        <input type="text" placeholder="email" name="email">
+        <select id="role">
+          <option value="bar">Bar</option>
+          <option value="door">Door</option>
+          <option value="clean">Clean</option>
+          <option value="moderator">Moderator</option>
+          <option value="other">Other</option>
+        </select>
+
+        <input type="text" placeholder="administration" name="administration">
+        <button type="submit">Add new member</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer_white">- gastro calendar -<p></p>
+  </footer>
+</div>

@@ -1,41 +1,50 @@
 * {
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 //common
 
 .container {
-   position: relative; 
-   width: 100%; 
-   height: auto !important; 
-   height: 100%; 
-   min-height: 100%;
-   }
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+}
 
-html,  body { 
-   margin: 0; 
-   width: 100%; 
-   height: 100%; 
-  }
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
 
 footer {
-   width: 100%; 
-   height: 30px; 
-   position: absolute; 
-   bottom: 0; 
-   text-align: center;
-  }
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
 
 .page-name {
-    margin-left: 50px;
-    font-size: 90px;
-    letter-spacing: 1px;
-  }
-.page-description{
-    margin-left: 50px;
-    font-size: 20px;
-    letter-spacing: 1px;
+  margin-left: 50px;
+  font-size: 90px;
+  letter-spacing: 1px;
+}
+.page-description {
+  margin-left: 50px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+input:focus {
+  border:solid 1px #EEA34A;
+}
+
+.headline-title{
+  font-size: 35px;
 }
 
 // footer
@@ -47,29 +56,29 @@ footer > p {
 
 // header
 
-.nav-list{
+.nav-list {
   display: flex;
   flex-flow: row no-wrap;
   list-style: none;
-  color:white;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  line-height:60px;
+  line-height: 60px;
 }
 
-.nav-right{
+.nav-right {
   display: flex;
   flex-flow: row no-wrap;
-  margin:0 0 0 auto;
-  margin-right:50px;
+  margin: 0 0 0 auto;
+  margin-right: 50px;
 }
 
-.nav-list-item{
+.nav-list-item {
   margin-left: 50px;
 }
 
-.nav-left{
+.nav-left {
   margin-left: 50px;
 }
 
@@ -78,24 +87,24 @@ header {
   background-color: lightblue;
 }
 
-.nav-left a{
+.nav-left a {
   text-decoration: none;
 }
-.nav-right a{
+.nav-right a {
   text-decoration: none;
 }
 
 .nav-left a:visited {
-color: white;
+  color: white;
 }
 
 .nav-right a:visited {
   text-decoration: none;
   color: white;
-  }
+}
 
 //index-page
-.top-page-name{
+.top-page-name {
   text-align: center;
   font-size: 90px;
   letter-spacing: 1px;
@@ -103,28 +112,28 @@ color: white;
 
 //log-in-page
 
-.login-page-title{
+.login-page-title {
   font-size: 30px;
   text-align: center;
   margin-top: 0px;
 }
 
-.form-part{
+.form-part {
   text-align: center;
   margin-top: 20px;
 }
 
-.login-container{
+.login-container {
   text-align: center;
 }
 
-.sign-up_btn_title{
+.sign-up_btn_title {
   margin: 20px 0 10px 0;
   text-align: center;
-  margin-top: 20px;
+  margin: 20px 0 25px 0;
 }
 
-.sign-up_btn{
+.sign-up_btn {
   margin: 10px 0 30px 0;
   background-color: white;
   width: 100px;
@@ -134,45 +143,141 @@ color: white;
 }
 
 .sign-up_btn a {
-text-decoration: none;
+  text-decoration: none;
 }
 
-.cover-image{
-  background-image:url("../images/apple-1867752_1920.jpg");
-  height:100vh;
-  text-align:  center; 
+.cover-image {
+  background-image: url("../images/apple-1867752_1920.jpg");
+  height: 100vh;
+  text-align: center;
 }
 
-.top-page-wrapper{
+.top-page-wrapper {
   background-color: white;
   width: 60vw;
   border-radius: 8px;
   display: inline-block;
   margin-top: 80px;
-  background:rgba(244, 244, 244, 0.619)
+  background: rgba(244, 244, 244, 0.701);
 }
 
-//sing-up-page 
-.cover-image_sign_up{
+//sing-up-page
+.cover-image_sign_up {
   background-image: url("../images/cafe-3537801_1920.jpg");
-  height:100vh;
-  text-align:  center; 
+  height: 100vh;
+  text-align: center;
 }
 
 .signup-page-wrapper {
   background-color: white;
   width: 60vw;
-  height: 70vh;
+  height: 65vh;
   border-radius: 8px;
   display: inline-block;
   margin-top: 80px;
-  background:rgba(244, 244, 244, 0.756)
+  background: rgba(244, 244, 244, 0.756);
 }
 
-.sign-page-title{
+.sign-page-title {
   font-size: 80px;
   text-align: center;
   margin-top: 0px;
 }
 
+//event-page
+
+.event_wrapper {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.927);
+  height: 70vh;
+  width: 65vw;
+  border-radius: 8px;
+  margin-top: 80px;
+}
+
+.event_page_background {
+  background-image: url("../images/time-273857_1920.jpg");
+  text-align: center;
+  height: 93vh;
+}
+
+.no_events{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+//member-page
+
+.member_wrapper {
+  display: inline-block;
+  background: rgba(254, 254, 254, 0.879);
+  height: 70vh;
+  width: 65vw;
+  border-radius: 8px;
+  margin-top: 80px;
+}
+
+.member_page_background {
+  background-image: url("../images/restaurant-2651423_1920.jpg");
+  text-align: center;
+  height: 93vh;
+}
+
+// .footer_white{
+//   color: white;
+// }
+
+//user_page
+.user_wrapper {
+  display: inline-block;
+  background: rgba(254, 254, 254, 0.783);
+  height: 70vh;
+  width: 65vw;
+  border-radius: 8px;
+  margin-top: 80px;
+}
+
+.user_page_background {
+  background-image: url("../images/diary-614149_1920.jpg");
+  text-align: center;
+  height: 93vh;
+}
+
+//sing-up-page
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.group {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+.sign_up_btn{
+  border-style: none;
+  border-radius: 2px;
+  font-size: 1.2em;
+  padding:3px 19px;
+  cursor: pointer;
+  margin: 15px 0 30px;
+  background-color: white;
+  color:blank;
+}
+
+.error-message{
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+//login page
+// .login_btn{
+//   padding: 2px 2px;
+//   font-weight: bold;
+// }
+.login_btn_div{
+  padding: 2px 2px;
+  font-weight: bold;
+}
 

@@ -1,20 +1,44 @@
-Private page
-{{#if user}}
-<div>
-  <h1>
-    Hello {{user.username}}
-  </h1>
-  <h5>
-    {{user.name}}
-  </h5>
-  {{user.email}}
-  My Shifts:
-  {{#each myShifts}}
-  created by{{this.owner.name}}
-  Date: {{this.date}}
-  Start Time: {{this.startTime}}
-  End Time:{{this.endTime}}
-  Description: {{this.description}}
-  {{/each}}
+<div class="container">
+  <header>
+    <ul class="nav-list flex">
+      <li class="nav-left">
+        <a href="/calendar" class="no-color-change">Calendar</a>
+      </li>
+      <div class="nav-right">
+        <li class="nav-list-item"><a href="/users">Group</a></li>
+        <li class="nav-list-item"><a href="/events">Event</a></li>
+        <li class="nav-list-item"><a href="/profile">Profile</a></li>
+        <li class="nav-list-item"><a href="/logout">Logout</a></li>
+
+      </div>
+    </ul>
+  </header>
+  <div class="user_page_background">
+    <div class="user_wrapper">
+      <h1>Private page</h1>
+      {{#if user}}
+      <div>
+        <h1>
+          Hello {{user.username}}
+        </h1>
+        <h5>
+          {{user.name}}
+        </h5>
+        {{user.email}}
+        My Shifts:
+        {{#each myShifts}}
+        created by{{this.owner.name}}
+        Date: {{this.date}}
+        Start Time: {{this.startTime}}
+        End Time:{{this.endTime}}
+        Description: {{this.description}}
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <footer>
+    <p>- gastro calendar -</p>
+  </footer>
 </div>
-{{/if}}
