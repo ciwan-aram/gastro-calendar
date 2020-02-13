@@ -14,18 +14,44 @@
 
     <div class="event_page_background">
         <div class="new_event_wrapper">
-        <div class="event_wrapper">
+            <div class="event_wrapper">
+                <h1 class="headline-title">Create Event</h1>
 
-            <form action="/events" method="POST">
-                <input type="text" name="name" required>
-                <input type="date" name="date" required>
-                <input type="time" name="startTime" min="00:00" max="23:99" required>
-                <input type="time" name="endTime" min="00:00" max="23:99" required>
-                <input type="text" name="description">
-                <button type="submit">Create new event</button>
-            </form>
+                <div class="list_wrapper_form">
+                    <form action="/events" method="POST">
+
+                        <div class="group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+
+                        <div class="group">
+                            <label for="date">Date</label>
+                            <input type="date" name="date" required>
+                        </div>
+
+                        <div class="group">
+                            <label for="startTime">Start Tine</label>
+                            <input type="time" name="startTime" min="00:00" max="23:99" required>
+                        </div>
+
+                        <div class="group">
+                            <label for="endtTime">End Tine</label>
+                            <input type="time" name="endTime" min="00:00" max="23:99" required>
+                        </div>
+
+                        <div class="group">
+                            <label for="description">Description</label>
+                            <input type="text" name="description">
+                        </div>
+                </div>
+
+                <div class="button-add">
+                    <button type="submit" class="btn_css">Create new event</button>
+                </div>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 
 

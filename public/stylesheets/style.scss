@@ -79,8 +79,12 @@ footer > p {
   margin-right: 50px;
 }
 
-.nav-list-item {
+.nav-list-item > a {
   margin-left: 50px;
+  color: white;
+}
+.no-color-change{
+  color: white;
 }
 
 .nav-left {
@@ -198,7 +202,7 @@ header {
 }
 
 .account-message {
-  margin: 20px 0 30px 0;
+  margin: 20px 0 25px 0;
 }
 
 //event-page
@@ -214,7 +218,6 @@ header {
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .new_event_wrapper {
   display: flex;
@@ -315,6 +318,25 @@ header {
   text-decoration: none;
 }
 
+.edit_btn{
+  border-radius: 3px;
+  font-size: 0.9em;
+  padding: 3px 19px;
+  cursor: pointer;
+  margin: 15px 0 0 0;
+  text-align: center;
+  background-color: white;
+  color: blank;
+  display: inline;
+  border: solid 1.5px blue;
+  
+}
+
+.edit_btn > a {
+  text-decoration: none;
+}
+
+
 //sing-up-page
 #form-container {
   display: flex;
@@ -357,4 +379,42 @@ header {
   font-size: 25px;
   margin: 10px 0;
   color: gray;
+}
+
+//add_member_page
+
+.list_wrapper_form > form{
+  margin-left: 310px;
+}
+
+.btn_css{
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #248;
+  color: #fff;
+  border-style: none;
+  padding: 3px 10px;
+  border-radius:3px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  margin-top: 45px;
+}
+
+//User_detail
+.username{
+  font-size: 45px;
+}
+
+.user_detail{
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+}
+
+.user_detail > h2 {
+  margin-top: 15px;
+}
+
+.user_detail > h3 {
+  margin-top: 15px;
 }

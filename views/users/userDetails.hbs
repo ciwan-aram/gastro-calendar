@@ -14,20 +14,23 @@
     </header>
 
     <div class="member_page_background">
-        <div class="member_wrapper">
+        <div class="new_member_wrapper">
+            <div class="member_wrapper">
+                <div class="user_detail">
+                <h2 class="username">{{name}}</h2>
+                <h3>Username: {{username}}</h3>
+                <h3>Email: {{email}}</h3>
+                {{#if showDelete}}
+                <h3>Role: {{role}}</h3>
+                <h3>Administration level: {{administration}}</h3>
+                <a href="/users/{{userId}}/delete">Delete member</a>
+                {{/if}}
+                {{#if showModify}}
+                <a href="/users/{{userId}}/modify">Edit user information</a>
+                {{/if}}
+                </div>
 
-            <h2>{{name}}</h2>
-            <h3>Username: {{username}}</h3>
-            <h3>Email: {{email}}</h3>
-            {{#if showDelete}}
-            <h3>Role: {{role}}</h3>
-            <h3>Administration level: {{administration}}</h3>
-            <a href="/users/{{userId}}/delete">Delete member</a>
-            {{/if}}
-            {{#if showModify}}
-            <a href="/users/{{userId}}/modify">Edit user information</a>
-            {{/if}}
-
+            </div>
         </div>
     </div>
 
