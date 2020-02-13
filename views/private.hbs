@@ -1,7 +1,20 @@
 Private page
 {{#if user}}
 <div>
-  My PROFILE
-  <a href="/">Index</a>
+  <h1>
+    Hello {{user.username}}
+  </h1>
+  <h5>
+    {{user.name}}
+  </h5>
+  {{user.email}}
+  My Shifts:
+  {{#each myShifts}}
+  created by{{this.owner.name}}
+  Date: {{this.date}}
+  Start Time: {{this.startTime}}
+  End Time:{{this.endTime}}
+  Description: {{this.description}}
+  {{/each}}
 </div>
 {{/if}}

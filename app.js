@@ -61,7 +61,7 @@ app.locals.title = 'Gastro Calendar';
 // Mongoose configuration
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/gastro-calendar', { useMongoClient: true })
+  .connect('mongodb://localhost/gastro-calendar')
   .then(() => {
     console.log('Connected to Mongo!');
   })

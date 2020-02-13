@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const eventSchema = new Schema({
-  name: String,
+  name: String, //user.username
   owner: {
     type: Schema.Types.ObjectId,
     ref: 'User'
