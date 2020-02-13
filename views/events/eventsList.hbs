@@ -13,29 +13,36 @@
     </header>
 
     <div class="event_page_background">
-        <div class="event_wrapper">
-            <h1 class="headline-title">Events List</h1>
-            {{#if events}}
-            <h1 class="page-name">Events List</h1>
-            <ul>
-                {{#each events}}
-                <li><a href="/events/{{_id}}">{{date}} {{startTime}} {{endTime}} {{name}}</a></li>
-                {{/each}}
-            </ul>
-            {{else}}
-            <h1 class="no_events"> - No events to display -</h1>
-            {{/if}}
+        <div class="new_event_wrapper">
+            <div class="event_wrapper">
+                <h1 class="headline-title">Events List</h1>
 
-            {{!-- How to make below appear only for admins --}}
-            {{#if user}}
-            <div class="create_evt_btn">
-            <a href="/events/new">Create a new event</a>
-            </div>
-            {{/if}}
+                <div class="list_wrapper">
+                    {{#if events}}
+                    <ul>
+                        {{#each events}}
+                        <li><a href="/events/{{_id}}">{{date}} {{startTime}} {{endTime}} {{name}}</a></li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <h1 class="no_events"> - No events to display -</h1>
+                    {{/if}}
+                </div>
+                {{!-- How to make below appear only for admins --}}
+                {{#if user}}
+
+                <div class="button-add">
+                    <a href="/events/new">
+                        <button>
+                            Create a new event
+                        </button>
+                    </a>
+                </div>
+                {{/if}}
         </div>
     </div>
-
-    <footer>
-        <p>- gastro calendar -</p>
-    </footer>
+</div>
+<footer>
+    <p>- gastro calendar -</p>
+</footer>
 </div>

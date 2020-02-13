@@ -48,6 +48,10 @@ input:focus {
   margin-top: 20px;
 }
 
+.list_wrapper > ul{
+  list-style: none;
+}
+
 // footer
 footer > p {
   color: gray;
@@ -206,12 +210,21 @@ header {
   width: 65vw;
   border-radius: 8px;
   margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.new_event_wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .event_page_background {
   background-image: url("../images/time-273857_1920.jpg");
   text-align: center;
-  height: 93vh;
+  height: 100vh;
 }
 
 .no_events {
@@ -221,17 +234,15 @@ header {
 }
 
 .create_evt_btn {
-  border-radius: 3px;
   font-size: 1.2em;
   padding: 5px 20px;
   cursor: pointer;
-  margin: 15px 0 0 0;
-  width: 150px;
-  text-align: center;
   background-color: white;
   color: blank;
-  display: inline;
-  border: solid 1.5px blue;
+  display: flex;
+  // flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 50px;
 }
 .create_evt_btn > a {
   text-decoration: none;
