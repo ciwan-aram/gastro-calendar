@@ -3,6 +3,8 @@ const router = express.Router();
 const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
+
+
 const loginCheck = (req, res, next) => {
   if (req.user) {
     next();
