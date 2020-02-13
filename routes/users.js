@@ -37,7 +37,7 @@ router.post('/users', loginCheck, (req, res, next) => {
   }
 });
 
-router.get('/users', (req, res) => {
+router.get('/users', loginCheck, (req, res) => {
   User.find()
     .then(users => {
       res.render('users/usersList.hbs', { users, user: req.user });

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Event = require('../models/Event');
 const User = require('../models/User');
-
+const moment = require('moment');
 const loginCheck = (req, res, next) => {
   if (req.user) {
     next();
@@ -11,6 +11,12 @@ const loginCheck = (req, res, next) => {
   }
 };
 
+router.get('/calendar/events', loginCheck, (req, res) => {
+  console.log('HELLO');
+  Event.find().then(events => {
+    res.json(events);
+  });
+});
 router.get('/events/new', loginCheck, (req, res) => {
   res.render('events/newEvent.hbs');
 });
@@ -37,10 +43,21 @@ router.post('/events', loginCheck, (req, res, next) => {
   }
 });
 
-router.get('/events', (req, res) => {
+router.get('/events', loginCheck, (req, res) => {
   Event.find()
     .then(events => {
-      res.render('events/eventsList.hbs', { events, user: req.user });
+      // let events = test.map(event => {
+      //   var proposedDate = event.date;
+      //   var momentDate = moment(proposedDate);
+      //   event.date = momentDate.format('MMMM Do YYYY, h:mm:ss a'); // February 13th 2020, 7:21:33 pm
+
+      //   console.log(momentDate.format('MMMM Do YYYY, h:mm:ss a'));
+      //   return { ...event.date };
+      // });
+      res.render('events/eventsList.hbs', {
+        events,
+        user: req.user
+      });
     })
     .catch(err => {
       next(err);
@@ -48,7 +65,7 @@ router.get('/events', (req, res) => {
 });
 
 //>>>>>>>>>>>>>>>>>>>>>>>    Event ID   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-router.get('/events/:id', (req, res, next) => {
+router.get('/events/:id', loginCheck, (req, res, next) => {
   Event.findById(req.params.id)
     .then(event => {
       let showDelete = false;
@@ -86,7 +103,7 @@ router.get('/events/:id', (req, res, next) => {
     });
 });
 
-router.get('/events/:id/delete', (req, res, next) => {
+router.get('/events/:id/delete', loginCheck, (req, res, next) => {
   if (req.user.role === 'moderator') {
     Event.deleteOne({ _id: req.params.id })
       .then(() => {
@@ -98,7 +115,7 @@ router.get('/events/:id/delete', (req, res, next) => {
   }
 });
 
-router.get('/events/:id/modify', (req, res, next) => {
+router.get('/events/:id/modify', loginCheck, (req, res, next) => {
   Event.findById(req.params.id).then(event => {
     res.render('./events/editEvent.hbs', {
       eventId: event._id,
@@ -111,7 +128,7 @@ router.get('/events/:id/modify', (req, res, next) => {
   });
 });
 
-router.post('/events/:id/modifyevent', (req, res) => {
+router.post('/events/:id/modifyevent', loginCheck, (req, res) => {
   const { name, date, startTime, endTime, description } = req.body;
   if (req.user.role === 'moderator') {
     Event.findOneAndUpdate(
