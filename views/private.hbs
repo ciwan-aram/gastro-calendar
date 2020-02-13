@@ -22,6 +22,7 @@
                     Hello {{user.username}}
                 </h1>
                 {{user.email}} <br>
+                <p class="myshift">
                 My Shifts:
                 {{#each myShifts}}
                 created by{{this.owner.name}}
@@ -29,7 +30,8 @@
                 Start Time: {{this.startTime}}
                 End Time:{{this.endTime}}
                 Description: {{this.description}}
-                <div class="edit_btn">
+                </p>
+                <div class="edit_btn user_edit_btn">
                     <a href="/users/{{user._id}}/modify">Edit</a>
                 </div>
                 {{/each}}

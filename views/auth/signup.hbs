@@ -13,7 +13,7 @@
     <div class="signup-page-wrapper">
       <h2 class="sign-page-title">Signup</h2>
 
-      <form action="/signup" method="POST" id="form-container">
+      <form action="/signup" method="POST" id="form-container" class="signup_form">
 
         <div class="group">
           <label for="name">Name</label>
@@ -39,7 +39,7 @@
           <label for="tel">TEL</label>
           <input id="tel" type="text" name="tel" placeholder="Your tel">
         </div>
-        <button class="sign_up_btn">Create account</button>
+        <button class="sign_up_btn sign_up_btn_s">Create account</button>
       </form>
       {{#if message}}
       <div class="error-message">{{ message }}</div>

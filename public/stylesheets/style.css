@@ -1,6 +1,7 @@
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: 'PT Sans', sans-serif; }
 
 .container {
   position: relative;
@@ -36,8 +37,9 @@ input:focus {
   border: solid 1px #eea34a; }
 
 .headline-title {
-  font-size: 45px;
-  margin-top: 20px; }
+  font-size: 55px;
+  margin-top: 40px;
+  letter-spacing: 0.7px; }
 
 .list_wrapper > ul {
   list-style: none; }
@@ -54,8 +56,9 @@ footer > p {
   color: white;
   font-weight: bold;
   font-size: 20px;
-  font-family: 'Mukta', Arial, Helvetica, sans-serif;
-  line-height: 60px; }
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+  line-height: 60px;
+  letter-spacing: 0.5px; }
 
 .nav-right {
   display: flex;
@@ -93,7 +96,9 @@ header {
 .top-page-name {
   text-align: center;
   font-size: 90px;
-  letter-spacing: 1px; }
+  letter-spacing: 2px;
+  margin-top: 25px;
+  margin-bottom: 30px; }
 
 .login-page-title {
   font-size: 30px;
@@ -165,9 +170,11 @@ header {
   background: rgba(244, 244, 244, 0.756); }
 
 .sign-page-title {
-  font-size: 80px;
+  font-size: 90px;
   text-align: center;
-  margin-top: 0px; }
+  margin-top: 25px;
+  margin-bottom: 35px;
+  letter-spacing: 2px; }
 
 .account-message {
   margin: 20px 0 25px 0; }
@@ -210,6 +217,18 @@ header {
 .create_evt_btn > a {
   text-decoration: none; }
 
+.event_detail > h2 {
+  margin-top: 10px; }
+
+.event_detail > h3 {
+  margin-top: 10px; }
+
+.event_detail > p {
+  margin-top: 10px; }
+
+.event_list_li {
+  margin-top: 10px; }
+
 .button-add {
   display: flex;
   justify-content: flex-end;
@@ -235,6 +254,9 @@ header {
   text-align: center;
   height: 100vh; }
 
+.member_list_li {
+  margin-top: 10px; }
+
 .user_wrapper {
   display: inline-block;
   background: rgba(254, 254, 254, 0.783);
@@ -242,6 +264,9 @@ header {
   width: 65vw;
   border-radius: 8px;
   margin-top: 80px; }
+
+.user-detail_bottom {
+  margin-bottom: 45px; }
 
 .user_page_background {
   background-image: url("../images/diary-614149_1920.jpg");
@@ -319,13 +344,13 @@ header {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.74);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px; }
 
 table {
   border-collapse: collapse;
-  width: 100vw; }
+  width: 90vw; }
 
 .button-style {
   font-family: 'Inconsolata', monospace;
@@ -351,9 +376,10 @@ table {
 
 .resultMonthAndYear {
   font-family: 'Inconsolata', monospace;
-  font-size: 20px;
+  font-size: 33px;
+  letter-spacing: 2px;
   font-weight: 700;
-  color: black;
+  color: rgba(0, 0, 0, 0.633);
   text-align: center;
   line-height: 40px;
   background-color: #e0f7fa; }
@@ -362,11 +388,12 @@ th {
   font-family: 'Inconsolata', monospace;
   border: 1px solid black;
   background-color: #00acc1;
-  color: #ffffff; }
+  color: #ffffff;
+  letter-spacing: 2px; }
 
 td {
   font-family: 'Inconsolata', monospace;
-  border: 1px solid black;
+  border: 1px solid grey;
   text-align: center;
   padding: 24px;
   width: 25px; }
@@ -387,7 +414,7 @@ td {
   background-color: #248;
   color: #fff;
   border-style: none;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-radius: 3px;
   margin-bottom: 25px;
   letter-spacing: 0.5px;
@@ -427,13 +454,36 @@ td {
   background-color: #248;
   color: #fff;
   border-style: none;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-radius: 3px;
   margin-bottom: 2px;
   letter-spacing: 0.5px;
   margin-top: 22px; }
 
+.sign_up_btn_s {
+  margin-top: 40px; }
+
 .list_wrapper_event {
   margin-left: 310px; }
+
+.myshift {
+  padding: 0 25px;
+  margin-bottom: 10px; }
+
+.user_edit_btn > a {
+  margin-top: 15px; }
+
+.event_detail {
+  margin-top: 40px; }
+
+.signup_form > div {
+  margin-top: 5px; }
+
+.group label {
+  font-size: 1.1em; }
+
+.loginlabl label {
+  font-size: 1.2em;
+  letter-spacing: 0.2px; }
 
 /*# sourceMappingURL=style.css.map */
