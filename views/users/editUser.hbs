@@ -18,16 +18,16 @@
       <form action="/users/modify/{{id}}" method="POST">
         <label for="name">Name:</label>
         <input type="text" value="{{name}}" name="name" id="name-member" required>
+
         <label for="username">Username:</label>
-        <input type="email" value="{{email}}" name="email" id="email-member" required>
+        <input type="text" value="{{username}}" name="username" id="email-member" required>
+
         <label for="email">Email:</label>
+        <input type="text" value="{{email}}" name="email">
 
-        <input type="text" value="{{username}}" name="username" required>
         <label for="role">Role:</label>
-
-        <input type="email" value="{{email}}" name="email">
         <input type="text" value="{{role}}" name="role" required>
-        <input type="text" value="{{administration}}" name="administration">
+
         <button type="submit">Modify Member Data</button>
       </form>
     </div>

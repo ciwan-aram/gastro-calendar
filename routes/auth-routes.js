@@ -8,6 +8,7 @@ const ensureLogin = require('connect-ensure-login');
 const Event = require('../models/Event');
 
 router.get('/profile', ensureLogin.ensureLoggedIn(), (req, res) => {
+  console.log("USER", req.user)
   // why do we render this page?
   Event.find({ name: req.user.username })
     .populate('owner')

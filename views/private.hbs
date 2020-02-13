@@ -13,10 +13,9 @@
       </div>
     </ul>
   </header>
+  {{#if user}}
   <div class="user_page_background">
     <div class="user_wrapper">
-      <h1 class="headline-title">Private page</h1>
-      {{#if user}}
       <div>
         <h1 class="profile_message">
           Hello {{user.username}}
@@ -29,7 +28,7 @@
         Start Time: {{this.startTime}}
         End Time:{{this.endTime}}
         Description: {{this.description}}
-        <a href="/users/{{user._id}}/modify">Edit</a>
+        <a href="/users/{{../user._id}}/modify">Edit</a>
         {{/each}}
       </div>
       {{/if}}
