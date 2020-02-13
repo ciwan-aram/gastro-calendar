@@ -54,7 +54,7 @@ footer > p {
   color: white;
   font-weight: bold;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Mukta', Arial, Helvetica, sans-serif;
   line-height: 60px; }
 
 .nav-right {
@@ -108,10 +108,18 @@ header {
   text-align: center; }
 
 .log_in_btn {
-  margin: 30px 0 0 0; }
+  margin: 30px 0 20px 0; }
 
 .login_btn_btn {
-  padding: 5px 10px; }
+  padding: 7px 26px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #248;
+  color: #fff;
+  border-style: none;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px; }
 
 .sign-up_btn_title {
   margin: 20px 0 10px 0;
@@ -293,7 +301,7 @@ header {
 
 .error-message {
   font-weight: bold;
-  margin-top: 15px; }
+  margin-top: 10px; }
 
 .login_btn_div {
   padding: 2px 2px;
@@ -393,10 +401,39 @@ td {
   display: flex;
   margin-top: 20px; }
 
-.user_detail > h2 {
-  margin-top: 15px; }
-
 .user_detail > h3 {
   margin-top: 15px; }
+
+.username {
+  margin-bottom: 35px; }
+
+.delete_btn {
+  display: flex;
+  flex-direction: row;
+  margin: auto; }
+
+.delete_btn > a {
+  text-decoration: none; }
+
+.delate_btn_right {
+  margin-left: 20px; }
+
+.delete_btn_bottom {
+  margin-bottom: 50px; }
+
+.sign_up_btn {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #248;
+  color: #fff;
+  border-style: none;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  margin-top: 22px; }
+
+.list_wrapper_event {
+  margin-left: 310px; }
 
 /*# sourceMappingURL=style.css.map */
