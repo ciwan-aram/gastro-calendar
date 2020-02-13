@@ -1,15 +1,38 @@
-{{#if users}}
-<h1>Members List</h1>
-<ul>
-  {{#each users}}
-  <li><a href="/users/{{_id}}">{{name}} {{username}} {{email}} {{role}} {{administration}}</a></li>
-  {{/each}}
-</ul>
-{{else}}
-<h1>No Members to display</h1>
-{{/if}}
+<div class="container">
+    <header>
+        <ul class="nav-list flex">
+            <li class="nav-left">
+                <a href="/calendar" class="no-color-change">Calendar</a>
+            </li>
+            <div class="nav-right">
+                <li class="nav-list-item"><a href="/users">Group</a></li>
+                <li class="nav-list-item"><a href="/events">Event</a></li>
+                <li class="nav-list-item"><a href="/profile">Profile</a></li>
+            </div>
+        </ul>
+    </header>
 
-{{!-- How to make below appear only for admins --}}
-{{#if users}}
-<a href="/users/add">Add a new member</a>
-{{/if}}
+    <div class="member_page_background">
+        <div class="member_wrapper">
+            {{#if users}}
+            <h1>Members List</h1>
+            <ul>
+                {{#each users}}
+                <li><a href="/users/{{_id}}">{{name}} {{username}} {{email}} {{role}} {{administration}}</a></li>
+                {{/each}}
+            </ul>
+            {{else}}
+            <h1>No Members to display</h1>
+            {{/if}}
+
+            {{!-- How to make below appear only for admins --}}
+            {{#if users}}
+            <a href="/users/add">Add a new member</a>
+            {{/if}}
+        </div>
+    </div>
+
+    <footer>
+         <p class="footer_white">- gastro calendar -<p></p>
+    </footer>
+</div>

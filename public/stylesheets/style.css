@@ -9,7 +9,8 @@
   height: 100%;
   min-height: 100%; }
 
-html, body {
+html,
+body {
   margin: 0;
   width: 100%;
   height: 100%; }
@@ -30,6 +31,12 @@ footer {
   margin-left: 50px;
   font-size: 20px;
   letter-spacing: 1px; }
+
+input:focus {
+  border: solid 1px #EEA34A; }
+
+.headline-title {
+  font-size: 35px; }
 
 footer > p {
   color: gray;
@@ -95,7 +102,7 @@ header {
 .sign-up_btn_title {
   margin: 20px 0 10px 0;
   text-align: center;
-  margin-top: 20px; }
+  margin: 20px 0 25px 0; }
 
 .sign-up_btn {
   margin: 10px 0 30px 0;
@@ -119,7 +126,7 @@ header {
   border-radius: 8px;
   display: inline-block;
   margin-top: 80px;
-  background: rgba(244, 244, 244, 0.619); }
+  background: rgba(244, 244, 244, 0.701); }
 
 .cover-image_sign_up {
   background-image: url("../images/cafe-3537801_1920.jpg");
@@ -129,7 +136,7 @@ header {
 .signup-page-wrapper {
   background-color: white;
   width: 60vw;
-  height: 70vh;
+  height: 65vh;
   border-radius: 8px;
   display: inline-block;
   margin-top: 80px;
@@ -139,5 +146,77 @@ header {
   font-size: 80px;
   text-align: center;
   margin-top: 0px; }
+
+.event_wrapper {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.927);
+  height: 70vh;
+  width: 65vw;
+  border-radius: 8px;
+  margin-top: 80px; }
+
+.event_page_background {
+  background-image: url("../images/time-273857_1920.jpg");
+  text-align: center;
+  height: 93vh; }
+
+.no_events {
+  font-size: 20px;
+  margin-top: 30px; }
+
+.member_wrapper {
+  display: inline-block;
+  background: rgba(254, 254, 254, 0.879);
+  height: 70vh;
+  width: 65vw;
+  border-radius: 8px;
+  margin-top: 80px; }
+
+.member_page_background {
+  background-image: url("../images/restaurant-2651423_1920.jpg");
+  text-align: center;
+  height: 93vh; }
+
+.user_wrapper {
+  display: inline-block;
+  background: rgba(254, 254, 254, 0.783);
+  height: 70vh;
+  width: 65vw;
+  border-radius: 8px;
+  margin-top: 80px; }
+
+.user_page_background {
+  background-image: url("../images/diary-614149_1920.jpg");
+  text-align: center;
+  height: 93vh; }
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.group {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px; }
+
+.sign_up_btn {
+  border-style: none;
+  border-radius: 2px;
+  font-size: 1.2em;
+  padding: 3px 19px;
+  cursor: pointer;
+  margin: 15px 0 30px;
+  background-color: white;
+  color: blank; }
+
+.error-message {
+  font-weight: bold;
+  margin-top: 15px; }
+
+.login_btn_div {
+  padding: 2px 2px;
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

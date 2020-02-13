@@ -3,32 +3,38 @@
     <header>
         <ul class="nav-list flex">
             <li class="nav-left">
-                <a>Calendar</a>
+                <a href="/calendar" class="no-color-change">Calendar</a>
             </li>
             <div class="nav-right">
-                <li class="nav-list-item"><a>Group</a></li>
-                <li class="nav-list-item"><a>Event</a></li>
-                <li class="nav-list-item"><a>Profile</a></li>
+                <li class="nav-list-item"><a href="/users">Group</a></li>
+                <li class="nav-list-item"><a href="/events">Event</a></li>
+                <li class="nav-list-item"><a href="/profile">Profile</a></li>
             </div>
         </ul>
     </header>
 
-<h2>{{event.name}}</h2>
-<h3>Start Time {{event.date}} {{event.startTime}}</h3>
-<h3>End Time {{event.date}} {{event.endTime}}</h3>
-<p>Description: {{event.description}}</p>
-<p>Created by {{event.owner.username}}</p>
+    <div class="event_page_background">
+        <div class="event_wrapper">
 
-{{#if showDelete}}
-<a href="/events/{{event._id}}/delete">Delete event</a>
-{{/if}}
+            <h2>{{event.name}}</h2>
+            <h3>Start Time {{event.date}} {{event.startTime}}</h3>
+            <h3>End Time {{event.date}} {{event.endTime}}</h3>
+            <p>Description: {{event.description}}</p>
+            <p>Created by {{event.owner.username}}</p>
 
-{{#if showModify}}
-<a href="/events/{{event._id}}/modify">Modify event</a>
-{{/if}}
+            {{#if showDelete}}
+            <a href="/events/{{event._id}}/delete">Delete event</a>
+            {{/if}}
+
+            {{#if showModify}}
+            <a href="/events/{{event._id}}/modify">Modify event</a>
+            {{/if}}
+
+        </div>
+    </div>
 
 
-<footer>
-     <p>- gastro-calendar -<p></p>
-</footer>
+    <footer>
+        <p>- gastro calendar -<p></p>
+    </footer>
 </div>

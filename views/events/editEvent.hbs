@@ -1,8 +1,36 @@
-<form action="/events/{{eventId}}/modifyevent" method="POST">
-  <input type="text" value="{{name}}" name="name" required>
-  <input type="date" value="{{date}}" name="date" required>
-  <input type="time" value="{{startTime}}" name="startTime" required>
-  <input type="time" value="{{endTime}}" name="endTime" required>
-  <input type="text" value="{{description}}" name="description">
-  <button type="submit">Modify event</button>
-</form>
+<div class="container">
+    <header>
+        <ul class="nav-list flex">
+            <li class="nav-left">
+                <a href="/calendar" class="no-color-change">Calendar</a>
+            </li>
+            <div class="nav-right">
+                <li class="nav-list-item"><a href="/users">Group</a></li>
+                <li class="nav-list-item"><a href="/events">Event</a></li>
+                <li class="nav-list-item"><a href="/profile">Profile</a></li>
+            </div>
+        </ul>
+    </header>
+
+
+    <div class="event_page_background">
+        <div class="event_wrapper">
+            
+            <form action="/events/{{eventId}}/modifyevent" method="POST">
+                <input type="text" value="{{name}}" name="name" required>
+                <input type="date" value="{{date}}" name="date" required>
+                <input type="time" value="{{startTime}}" name="startTime" required>
+                <input type="time" value="{{endTime}}" name="endTime" required>
+                <input type="text" value="{{description}}" name="description">
+                <button type="submit">Modify event</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <p>- gastro calendar -</p>
+    </footer>
+</div>
