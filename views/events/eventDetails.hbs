@@ -14,26 +14,29 @@
     </header>
 
     <div class="event_page_background">
-         <div class="new_event_wrapper">
-        <div class="event_wrapper">
+        <div class="new_event_wrapper">
+            <div class="event_wrapper">
 
-            <h1 class="headline-title">Event Detail</h1>
-            <h2>{{event.name}}</h2>
-            <h3>Start Time {{event.date}} {{event.startTime}}</h3>
-            <h3>End Time {{event.date}} {{event.endTime}}</h3>
-            <p>Description: {{event.description}}</p>
-            <p>Created by {{event.owner.username}}</p>
+                <h1 class="headline-title">Event Detail</h1>
+                <h2>{{event.name}}</h2>
+                <h3>Start Time {{event.date}} {{event.startTime}}</h3>
+                <h3>End Time {{event.date}} {{event.endTime}}</h3>
+                <p>Description: {{event.description}}</p>
+                <p>Created by {{event.owner.username}}</p>
 
-            {{#if showDelete}}
-            <a href="/events/{{event._id}}/delete">Delete event</a>
-            {{/if}}
+                <div class="delete_btn">
 
-            {{#if showModify}}
-            <a href="/events/{{event._id}}/modify">Modify event</a>
-            {{/if}}
+                    {{#if showDelete}}
+                    <a href="/events/{{event._id}}/delete" class="edit_btn">Delete event</a>
+                    {{/if}}
 
+                    {{#if showModify}}
+                    <a href="/events/{{event._id}}/modify" class="delate_btn_right edit_btn">Modify event</a>
+                    {{/if}}
+                </div>
+
+            </div>
         </div>
-    </div>
     </div>
 
 

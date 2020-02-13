@@ -39,6 +39,27 @@
     </div>
 
 
+    {{!-- {{#if user}}
+    <div class="user_page_background">
+        <div class="user_wrapper">
+            <div>
+                <h1 class="profile_message">
+                    Hello {{user.username}}
+                </h1>
+                {{user.email}} <br>
+                My Shifts:
+                {{#each myShifts}}
+                created by{{this.owner.name}}
+                Date: {{this.date}}
+                Start Time: {{this.startTime}}
+                End Time:{{this.endTime}}
+                Description: {{this.description}}
+                {{/each}}
+            </div>
+            <a href="/users/{{user._id}}/modify">Edit</a>
+            {{/if}} --}}
+
+
     <footer>
         <p>- gastro calendar -</p>
     </footer>

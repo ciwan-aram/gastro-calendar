@@ -13,23 +13,44 @@
   </header>
 
   <div class="member_page_background">
-    <div class="member_wrapper">
+    <div class="new_member_wrapper">
+      <div class="member_wrapper">
+        <h1 class="headline-title">Edit User</h1>
 
-      <form action="/users/modify/{{id}}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" value="{{name}}" name="name" id="name-member" required>
-        <label for="username">Username:</label>
-        <input type="email" value="{{email}}" name="email" id="email-member" required>
-        <label for="email">Email:</label>
+        <div class="list_wrapper list_wrapper_event">
+          <form action="/users/modify/{{id}}" method="POST">
 
-        <input type="text" value="{{username}}" name="username" required>
-        <label for="role">Role:</label>
+            <div class="group">
+              <label for="name">Name:</label>
+              <input type="text" value="{{name}}" name="name" id="name-member" required>
+            </div>
 
-        <input type="email" value="{{email}}" name="email">
-        <input type="text" value="{{role}}" name="role" required>
-        <input type="text" value="{{administration}}" name="administration">
-        <button type="submit" class="btn_css">Modify Member Data</button>
-      </form>
+            <div class="group">
+              <label for="username">Username:</label>
+              <input type="text" value="{{username}}" name="username" id="email-member" required>
+            </div>
+
+            <div class="group">
+              <label for="email">Email:</label>
+              <input type="text" value="{{email}}" name="email">
+            </div>
+
+            <div class="group">
+              <label for="role">Role:</label>
+              <div class="edit_grup">
+                <input type="text" value="{{role}}" name="role" required>
+                <input type="text" value="{{administration}}" name="administration">
+              </div>
+            </div>
+        </div>
+
+        <div class="button-add">
+          <button type="submit" class="btn_css">Modify Member Data</button>
+        </div>
+        </form>
+
+
+      </div>
     </div>
   </div>
 

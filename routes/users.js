@@ -37,7 +37,7 @@ router.post('/users', loginCheck, (req, res, next) => {
   }
 });
 
-router.get('/users', (req, res) => {
+router.get('/users', loginCheck, (req, res) => {
   User.find()
     .then(users => {
       res.render('users/usersList.hbs', { users, user: req.user });
@@ -102,6 +102,7 @@ router.get('/users/:id/delete', (req, res, next) => {
 });
 
 router.get('/users/:id/modify', (req, res, next) => {
+  console.log('USER ID');
   User.findById(req.params.id).then(user => {
     console.log('user', user);
     res.render('./users/editUser.hbs', {
@@ -116,6 +117,7 @@ router.get('/users/:id/modify', (req, res, next) => {
 });
 
 router.post('/users/:id/modify', (req, res, next) => {
+  console.log('HHIIIIIII');
   if (req.user.role === 'moderator') {
     User.findOneAndUpdate({ _id: req.params.id })
       .then(() => {
@@ -129,7 +131,7 @@ router.post('/users/:id/modify', (req, res, next) => {
 
 router.post('/users/modify/:id', (req, res) => {
   const { name, username, email, role, administration } = req.body;
-  console.log('USERRR', req.params.id);
+  console.log('EMAI>>>L', username, email);
   User.findOneAndUpdate(
     {
       _id: req.params.id
