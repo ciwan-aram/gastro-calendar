@@ -15,7 +15,9 @@ const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const User = require('./models/User');
 mongoose
-  .connect('mongodb://localhost/gastro-calendar', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/gastro-calendar', {
+    useNewUrlParser: true
+  })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
