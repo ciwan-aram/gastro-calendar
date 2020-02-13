@@ -100,7 +100,6 @@ router.get('/events/:id/delete', (req, res, next) => {
 
 router.get('/events/:id/modify', (req, res, next) => {
   Event.findById(req.params.id).then(event => {
-    console.log('event', event);
     res.render('./events/editEvent.hbs', {
       eventId: event._id,
       name: event.name,

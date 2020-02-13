@@ -15,16 +15,12 @@
   </header>
   <div class="user_page_background">
     <div class="user_wrapper">
-      <h1>Private page</h1>
       {{#if user}}
       <div>
         <h1>
           Hello {{user.username}}
         </h1>
-        <h5>
-          {{user.name}}
-        </h5>
-        {{user.email}}
+        {{user.email}} <br>
         My Shifts:
         {{#each myShifts}}
         created by{{this.owner.name}}
@@ -32,11 +28,13 @@
         Start Time: {{this.startTime}}
         End Time:{{this.endTime}}
         Description: {{this.description}}
+        <a href="/users/{{user._id}}/modify">Edit</a>
         {{/each}}
       </div>
       {{/if}}
     </div>
   </div>
+
 
   <footer>
     <p>- gastro calendar -</p>

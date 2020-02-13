@@ -109,6 +109,7 @@ router.get('/users/:id/modify', (req, res, next) => {
       username: user.username,
       email: user.email,
       role: user.role,
+      id: user._id,
       administration: user.administration
     });
   });
@@ -126,16 +127,17 @@ router.post('/users/:id/modify', (req, res, next) => {
   }
 });
 
-router.post('/users/modify', (req, res) => {
+router.post('/users/modify/:id', (req, res) => {
   const { name, username, email, role, administration } = req.body;
+  console.log('USERRR', req.params.id);
   User.findOneAndUpdate(
     {
-      _id: req.user._id
+      _id: req.params.id
     },
     { name, username, email, role, administration },
     { new: true }
   )
-    .then(data => console.log(data))
+    .then(data => console.log('DATA', data))
     .catch(err => console.log(err));
   res.redirect('/users');
 });

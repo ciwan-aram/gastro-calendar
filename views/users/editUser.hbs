@@ -15,10 +15,12 @@
   <div class="member_page_background">
     <div class="member_wrapper">
 
-      <form action="/users/modify" method="POST">
+      <form action="/users/modify/{{id}}" method="POST">
         <label for="name">Name:</label>
         <input type="text" value="{{name}}" name="name" id="name-member" required>
         <label for="username">Username:</label>
+        <input type="email" value="{{email}}" name="email" id="email-member" required>
+        <label for="email">Email:</label>
 
         <input type="text" value="{{username}}" name="username" required>
         <label for="role">Role:</label>

@@ -5,10 +5,17 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 const passport = require('passport');
 const ensureLogin = require('connect-ensure-login');
+const Event = require('../models/Event');
 
 router.get('/profile', ensureLogin.ensureLoggedIn(), (req, res) => {
   // why do we render this page?
-  res.render('private', { user: req.user });
+  Event.find({ name: req.user.username })
+    .populate('owner')
+    .then(myShifts => {
+      console.log('helloooo', myShifts);
+      res.render('private', { user: req.user, myShifts });
+    });
+  // res.render('private', { user: req.user });
 });
 
 router.get('/signup', (req, res, next) => {
@@ -45,7 +52,7 @@ router.post('/signup', (req, res, next) => {
         if (err) {
           res.render('auth/signup', { message: 'Something went wrong' });
         } else {
-          res.redirect('/profile/myProfile');
+          res.redirect('/profile');
         }
       });
     })
@@ -61,7 +68,7 @@ router.get('/login', (req, res, next) => {
 router.post(
   '/login',
   passport.authenticate('local', {
-    successRedirect: '/profile/myProfile',
+    successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: true,
     passReqToCallback: true
