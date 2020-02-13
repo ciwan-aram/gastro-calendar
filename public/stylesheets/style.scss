@@ -137,11 +137,20 @@ header {
 }
 
 .log_in_btn {
-  margin: 30px 0 0 0;
+  margin: 30px 0 20px 0;
+  
 }
 
 .login_btn_btn {
-  padding: 5px 10px;
+  padding: 7px 26px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #248;
+  color: #fff;
+  border-style: none;
+  border-radius:3px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
 }
 
 .sign-up_btn_title {
@@ -417,4 +426,18 @@ header {
 
 .user_detail > h3 {
   margin-top: 15px;
+}
+
+.delete_btn{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.delate_btn_right{
+  margin-left:20px ;
+}
+
+.delete_btn_bottom{
+  margin-bottom: 20px;
 }

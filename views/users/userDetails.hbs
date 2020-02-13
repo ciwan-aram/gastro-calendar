@@ -22,12 +22,14 @@
                 <h3>Email: {{email}}</h3>
                 {{#if showDelete}}
                 <h3>Role: {{role}}</h3>
-                <h3>Administration level: {{administration}}</h3>
+                <h3 class="delete_btn_bottom">Administration level: {{administration}}</h3>
+                <div class="delete_btn">
                 <a href="/users/{{userId}}/delete">Delete member</a>
                 {{/if}}
                 {{#if showModify}}
-                <a href="/users/{{userId}}/modify">Edit user information</a>
+                <a href="/users/{{userId}}/modify" class="delate_btn_right">Edit user information</a>
                 {{/if}}
+                </div>
                 </div>
 
             </div>
