@@ -4,7 +4,6 @@ const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
 
-
 const loginCheck = (req, res, next) => {
   if (req.user) {
     next();
@@ -48,15 +47,26 @@ router.post('/events', loginCheck, (req, res, next) => {
 router.get('/events', loginCheck, (req, res) => {
   Event.find()
     .then(events => {
-      // let events = test.map(event => {
-      //   var proposedDate = event.date;
-      //   var momentDate = moment(proposedDate);
-      //   event.date = momentDate.format('MMMM Do YYYY, h:mm:ss a'); // February 13th 2020, 7:21:33 pm
-
-      //   console.log(momentDate.format('MMMM Do YYYY, h:mm:ss a'));
-      //   return { ...event.date };
-      // });
+      let dates = events.map(event => {
+        const newObj = {};
+        var proposedDate = event.date;
+        var momentDate = moment(proposedDate);
+        event.data = momentDate.format('MMMM Do YYYY'); // February 13th 2020, 7:21:33 pm
+        // console.log('HEEERE  ', momentDate.format('MMMM Do YYYY, h:mm:ss a'));
+        let date = momentDate.format('MMMM Do YYYY');
+        newObj.date = date;
+        newObj._id = event._id;
+        newObj.name = event.name;
+        newObj.startTime = event.startTime;
+        newObj.endTime = event.endTime;
+        newObj.description = event.description;
+        newObj.owner = event.owner;
+        console.log(newObj);
+        return { ...newObj };
+      });
+      console.log(dates);
       res.render('events/eventsList.hbs', {
+        dates,
         events,
         user: req.user
       });

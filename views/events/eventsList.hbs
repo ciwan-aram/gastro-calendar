@@ -18,13 +18,13 @@
         <div class="new_event_wrapper">
             <div class="event_wrapper">
                 <h1 class="headline-title">Shifts & Events List</h1>
-
                 <div class="list_wrapper">
                     {{#if events}}
                     <ul>
-                        {{#each events}}
+                        {{#each dates}}
                         <li><a href="/events/{{_id}}">{{name}} {{date}} {{startTime}} {{endTime}}</a></li>
                         {{/each}}
+
                     </ul>
                     {{else}}
                     <h1 class="no_events"> - No events to display -</h1>

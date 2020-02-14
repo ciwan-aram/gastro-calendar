@@ -17,13 +17,14 @@ router.get('/users/add', loginCheck, (req, res) => {
 
 router.post('/users', loginCheck, (req, res, next) => {
   console.log('req user body', req.user.body);
-  const { name, username, email, password, role } = req.body;
+  const { name, username, email, password, telephone, role } = req.body;
   // User.findOne({ name }).then(found => {});
   if (req.user && req.user.role === 'moderator') {
     User.create({
       name,
       username,
       email,
+      telephone,
       password,
       role
     })
