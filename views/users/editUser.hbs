@@ -2,12 +2,14 @@
   <header>
     <ul class="nav-list flex">
       <li class="nav-left">
-        <a href="/calendar" class="no-color-change">Calendar</a>
+        <a href="/calendar" class="no-color-change">{{workGroup}}Calendar</a>
       </li>
       <div class="nav-right">
-        <li class="nav-list-item"><a href="/users">Group</a></li>
-        <li class="nav-list-item"><a href="/events">Event</a></li>
+        <li class="nav-list-item"><a href="/users">Group Members</a></li>
+        <li class="nav-list-item"><a href="/events">Shifts & Events</a></li>
         <li class="nav-list-item"><a href="/profile">Profile</a></li>
+        {{!-- <li class="nav-list-item"><a href="/logout">Logout</a></li> --}}
+
       </div>
     </ul>
   </header>
@@ -36,10 +38,15 @@
             </div>
 
             <div class="group">
+              <label for="telephone">Phone Number</label>
+              <input type="Number" placeholder="phone number" name="telephone">
+            </div>
+
+            <div class="group">
               <label for="role">Role:</label>
               <div class="edit_grup">
                 <input type="text" value="{{role}}" name="role" required>
-                <input type="text" value="{{administration}}" name="administration">
+                {{!-- <input type="text" value="{{administration}}" name="administration"> --}}
               </div>
             </div>
         </div>

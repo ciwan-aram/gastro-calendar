@@ -1,13 +1,15 @@
 <div class="container">
     <header>
         <ul class="nav-list flex">
-            <li class="nav-left">
-                <a href="/calendar" class="no-color-change">Calendar</a>
-            </li>
+            {{!-- <li class="nav-left">
+                <a href="/calendar" class="no-color-change">{{workGroup}}Calendar</a>
+            </li> --}}
             <div class="nav-right">
-                <li class="nav-list-item"><a href="/users">Group</a></li>
-                <li class="nav-list-item"><a href="/events">Event</a></li>
+                <li class="nav-list-item"><a href="/users">Group Members</a></li>
+                <li class="nav-list-item"><a href="/events">Shifts & Events</a></li>
                 <li class="nav-list-item"><a href="/profile">Profile</a></li>
+                {{!-- <li class="nav-list-item"><a href="/logout">Logout</a></li> --}}
+
             </div>
         </ul>
     </header>
@@ -33,26 +35,29 @@
 <script>
 
 
-    {{!-- axios.get("/calendar/events").then(results => {
-        console.log(results.data)
+    {{!-- {
+        {
+            !--axios.get("/calendar/events").then(results => {
+                console.log(results.data)
 
-        results.data.forEach(event => {
-            console.log(event)
-            let container = document.createElement("div");
-            let titleField = document.createElement("h1")
-            let description = document.createElement("p")
-            let datum = document.createElement("h2")
-            titleField.innerHTML = event.name
-            description.innerHTML = event.description
-            datum.innerHTML = event.date
-            container.append(titleField)
-            container.append(description)
-            container.append(datum)
-            let wrapper = document.querySelector("#wrapper")
-            wrapper.append(container)
-        }
-        )
-    }) --}}
+                results.data.forEach(event => {
+                    console.log(event)
+                    let container = document.createElement("div");
+                    let titleField = document.createElement("h1")
+                    let description = document.createElement("p")
+                    let datum = document.createElement("h2")
+                    titleField.innerHTML = event.name
+                    description.innerHTML = event.description
+                    datum.innerHTML = event.date
+                    container.append(titleField)
+                    container.append(description)
+                    container.append(datum)
+                    let wrapper = document.querySelector("#wrapper")
+                    wrapper.append(container)
+                });
+            }); --}
+    } --}}
+
 
 
 
