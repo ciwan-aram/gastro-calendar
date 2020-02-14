@@ -22,27 +22,24 @@
                     Hello {{user.username}}
                 </h1> --}}
                 {{user.email}} <br>
-<<<<<<< HEAD
-                <p class="myshift">
-                My Shifts:
-                {{#each myShifts}}
-                created by{{this.owner.name}}
-                Date: {{this.date}}
-                Start Time: {{this.startTime}}
-                End Time:{{this.endTime}}
-                Description: {{this.description}}
+                {{!-- <p class="myshift">
+                    My Shifts:
+                    {{#each myShifts}}
+                    created by{{this.owner.name}}
+                    Date: {{this.date}}
+                    Start Time: {{this.startTime}}
+                    End Time:{{this.endTime}}
+                    Description: {{this.description}}
                 </p>
                 <div class="edit_btn user_edit_btn">
                     <a href="/users/{{user._id}}/modify">Edit</a>
-                </div>
-=======
+                </div> --}}
                 My Shifts: <br>
                 {{#each myShifts}}
                 {{this.date}}
                 {{this.startTime}}
                 {{this.endTime}}
                 {{this.description}}
->>>>>>> 12fac070919e62500835692991b31a1284414118
                 {{/each}}
             </div>
             {{/if}}

@@ -21,13 +21,11 @@
                 <div class="list_wrapper">
                     {{#if events}}
                     <ul>
-<<<<<<< HEAD
-                        {{#each events}}
-                        <li class="event_list_li"><a href="/events/{{_id}}">{{date}} {{startTime}} {{endTime}} {{name}}</a></li>
-=======
+                        {{!-- {{#each events}}
+                        <li class="event_list_li"><a href="/events/{{_id}}">{{date}} {{startTime}} {{endTime}}
+                                {{name}}</a></li> --}}
                         {{#each dates}}
                         <li><a href="/events/{{_id}}">{{name}} {{date}} {{startTime}} {{endTime}}</a></li>
->>>>>>> 12fac070919e62500835692991b31a1284414118
                         {{/each}}
 
                     </ul>
