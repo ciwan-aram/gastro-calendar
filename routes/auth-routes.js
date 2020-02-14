@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const passport = require('passport');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
-const passport = require('passport');
-const ensureLogin = require('connect-ensure-login');
 const Event = require('../models/Event');
+const User = require('../models/User');
+const ensureLogin = require('connect-ensure-login');
 
 router.get('/profile', ensureLogin.ensureLoggedIn(), (req, res) => {
-  console.log("USER", req.user)
+  console.log('USER', req.user);
   // why do we render this page?
   Event.find({ name: req.user.username })
     .populate('owner')

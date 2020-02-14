@@ -16,38 +16,38 @@
       <form action="/signup" method="POST" id="form-container">
 
         <div class="group">
-          <label for="name">Name</label>
-          <input id="username" type="text" name="name" placeholder="JonSnow">
+          <label for="groupname">Calendar Group Name</label>
+          <input id="groupname" type="text" name="groupname" placeholder="e.g. Möbel Olfe Bar">
         </div>
         <div class="group">
-          <label for="username">Username</label>
-          <input id="username" type="text" name="username" placeholder="JonSnow123">
+          <label for="name">Your Name</label>
+          <input id="username" type="text" name="name" placeholder="e.g. Mononoke Chichiyaku">
+        </div>
+        <div class="group">
+          <label for="username">Your username</label>
+          <input id="username" type="text" name="username" placeholder="e.g. mononoke999">
         </div>
         <div class="group">
           <label for="password">Password</label>
           <input id="password" type="password" name="password" placeholder="Your password">
         </div>
         <div class="group">
-          <label for="groupname">Group Name</label>
-          <input id="groupname" type="text" name="groupname" placeholder="Your groupname">
-        </div>
-        <div class="group">
           <label for="email">E-mail</label>
-          <input id="email" type="email" name="email" placeholder="Your email">
+          <input id="email" type="email" name="email" placeholder="Your email address">
         </div>
         <div class="group">
           <label for="tel">TEL</label>
-          <input id="tel" type="text" name="tel" placeholder="Your tel">
+          <input id="tel" type="text" name="tel" placeholder="Your telephone number">
         </div>
-        <button class="sign_up_btn">Create account</button>
+        <button class="sign_up_btn">Create a calendar account</button>
       </form>
       {{#if message}}
       <div class="error-message">{{ message }}</div>
       {{/if}}
-  
+
 
       <p class="account-message">
-        Do you already have an account?
+        Do you already have a calendar account?
         <a href="/">Login</a>
       </p>
 

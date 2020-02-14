@@ -2,11 +2,11 @@
     <header>
         <ul class="nav-list flex">
             <li class="nav-left">
-                <a href="/calendar" class="no-color-change">Calendar</a>
+                <a href="/calendar" class="no-color-change">{{workGroup}}Calendar</a>
             </li>
             <div class="nav-right">
-                <li class="nav-list-item"><a href="/users">Group</a></li>
-                <li class="nav-list-item"><a href="/events">Event</a></li>
+                <li class="nav-list-item"><a href="/users">Group Members</a></li>
+                <li class="nav-list-item"><a href="/events">Shifts & Events</a></li>
                 {{!-- <li class="nav-list-item"><a href="/profile">Profile</a></li> --}}
                 <li class="nav-list-item"><a href="/logout">Logout</a></li>
 
@@ -15,26 +15,25 @@
     </header>
     <div class="user_page_background">
         <div class="user_wrapper">
-            <h1 class="headline-title">Profile page</h1>
+            <h1 class="headline-title">Hello {{user.username}}</h1>
             {{#if user}}
             <div>
-                <h1 class="profile_message">
+                {{!-- <h1 class="profile_message">
                     Hello {{user.username}}
-                </h1>
+                </h1> --}}
                 {{user.email}} <br>
-                My Shifts:
+                My Shifts: <br>
                 {{#each myShifts}}
-                created by{{this.owner.name}}
-                Date: {{this.date}}
-                Start Time: {{this.startTime}}
-                End Time:{{this.endTime}}
-                Description: {{this.description}}
-                <div class="edit_btn">
-                    <a href="/users/{{user._id}}/modify">Edit</a>
-                </div>
+                {{this.date}}
+                {{this.startTime}}
+                {{this.endTime}}
+                {{this.description}}
                 {{/each}}
             </div>
             {{/if}}
+            <div class="edit_btn">
+                <a href="/users/{{user._id}}/modify">Edit</a>
+            </div>
         </div>
     </div>
 
@@ -61,6 +60,6 @@
 
 
     <footer>
-        <p>- gastro calendar -</p>
+        <p>- Gastro Calendar -</p>
     </footer>
 </div>

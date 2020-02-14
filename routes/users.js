@@ -17,7 +17,7 @@ router.get('/users/add', loginCheck, (req, res) => {
 
 router.post('/users', loginCheck, (req, res, next) => {
   console.log('req user body', req.user.body);
-  const { name, username, email, password, role, administration } = req.body;
+  const { name, username, email, password, role } = req.body;
   // User.findOne({ name }).then(found => {});
   if (req.user && req.user.role === 'moderator') {
     User.create({
@@ -25,8 +25,7 @@ router.post('/users', loginCheck, (req, res, next) => {
       username,
       email,
       password,
-      role,
-      administration
+      role
     })
       .then(() => {
         res.redirect('/users');
@@ -47,7 +46,7 @@ router.get('/users', loginCheck, (req, res) => {
     });
 });
 
-router.get('/users/:id', (req, res, next) => {
+router.get('/users/:id', loginCheck, (req, res, next) => {
   User.findById(req.params.id)
     .then(user => {
       let showDelete = false;
@@ -75,7 +74,6 @@ router.get('/users/:id', (req, res, next) => {
           username: user.username,
           email: user.email,
           role: user.role,
-          administration: user.administration,
           showDelete: showDelete,
           showSaveChanges: showSaveChanges,
           showModify: showModify,
@@ -89,7 +87,7 @@ router.get('/users/:id', (req, res, next) => {
     });
 });
 
-router.get('/users/:id/delete', (req, res, next) => {
+router.get('/users/:id/delete', loginCheck, (req, res, next) => {
   if (req.user.role === 'moderator') {
     User.deleteOne({ _id: req.params.id })
       .then(() => {
@@ -101,7 +99,7 @@ router.get('/users/:id/delete', (req, res, next) => {
   }
 });
 
-router.get('/users/:id/modify', (req, res, next) => {
+router.get('/users/:id/modify', loginCheck, (req, res, next) => {
   console.log('USER ID');
   User.findById(req.params.id).then(user => {
     console.log('user', user);
@@ -110,13 +108,12 @@ router.get('/users/:id/modify', (req, res, next) => {
       username: user.username,
       email: user.email,
       role: user.role,
-      id: user._id,
-      administration: user.administration
+      id: user._id
     });
   });
 });
 
-router.post('/users/:id/modify', (req, res, next) => {
+router.post('/users/:id/modify', loginCheck, (req, res, next) => {
   console.log('HHIIIIIII');
   if (req.user.role === 'moderator') {
     User.findOneAndUpdate({ _id: req.params.id })
@@ -129,14 +126,14 @@ router.post('/users/:id/modify', (req, res, next) => {
   }
 });
 
-router.post('/users/modify/:id', (req, res) => {
-  const { name, username, email, role, administration } = req.body;
+router.post('/users/modify/:id', loginCheck, (req, res) => {
+  const { name, username, email, role } = req.body;
   console.log('EMAI>>>L', username, email);
   User.findOneAndUpdate(
     {
       _id: req.params.id
     },
-    { name, username, email, role, administration },
+    { name, username, email, role },
     { new: true }
   )
     .then(data => console.log('DATA', data))

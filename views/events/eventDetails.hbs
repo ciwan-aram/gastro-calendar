@@ -1,14 +1,15 @@
-{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> --}}
 <div class="container">
     <header>
         <ul class="nav-list flex">
             <li class="nav-left">
-                <a href="/calendar" class="no-color-change">Calendar</a>
+                <a href="/calendar" class="no-color-change">{{workGroup}}Calendar</a>
             </li>
             <div class="nav-right">
-                <li class="nav-list-item"><a href="/users">Group</a></li>
-                <li class="nav-list-item"><a href="/events">Event</a></li>
+                <li class="nav-list-item"><a href="/users">Group Members</a></li>
+                <li class="nav-list-item"><a href="/events">Shifts & Events</a></li>
                 <li class="nav-list-item"><a href="/profile">Profile</a></li>
+                {{!-- <li class="nav-list-item"><a href="/logout">Logout</a></li> --}}
+
             </div>
         </ul>
     </header>
